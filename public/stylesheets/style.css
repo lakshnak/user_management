@@ -1,0 +1,103 @@
+*{
+    margin:0;
+    padding: 0;
+  
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    font-family: "Poppins", sans-serif;
+   
+ }
+.index_two{
+  display:block;
+  margin:10px;
+  padding: 7px 10px;
+  width:80%;
+  background-color: goldenrod;
+  border: 2px solid grey;
+  border-radius: 5px;
+  transition: 0.3s;
+
+}
+input::placeholder{
+  color: white;
+}
+#back{
+  /* background-color: rgb(15, 14, 14); */
+  padding: 8% 50px;
+  height:100%;
+}
+h4{
+  margin:10px;
+  padding: 7px 10px;
+  color: white;
+  font-weight: 100;
+  
+}
+#index{
+  margin: 0% 30%;
+  padding:20px;
+  border: 1px solid grey;
+  border-radius: 10PX;
+  background-color:  rgb(15, 14, 14);
+}
+#index_button{
+  padding: 7px 10px;
+  display: inline;
+  margin:10px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: white;
+  transition: 0.3s;
+}
+.index_two:hover{
+  border: 3px solid black;
+}
+#view{
+  list-style: none;
+  display: inline;
+ 
+}
+ul
+{
+  display: inline;
+}
+input::placeholder{
+  color:black;
+}
+#view a{
+  transition: 0.3s;
+  display: inline;
+  text-decoration: none;
+  color:black;
+   margin:10px;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 7px 10px;
+  font-weight: 100;
+  font-size: small;
+  background-color: white;
+}
+#table1,th,td{
+  border:3px  solid  black;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: goldenrod;
+  border-radius: 5px;
+}
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+#index_button:hover{
+  border: 3px solid goldenrod;
+}
+#view a:hover{
+  border: 3px solid goldenrod;
+}
+#viewuser{
+  background-color:white ;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/stylesheets/style.css"  rel="stylesheet">
+  <script href="/javascripts/script.js"></script>
+    <title>Document</title>
+</head>
+<div id="back">
+  <div id="index">
+    <form action="/edit/<%= user.userid %>" method="POST" style="display:inline;">
+      <div class="index_one">
+        <h4>User Management</h4>
+        <input type="text"  class="index_two" name="firstname" id="firstname"   placeholder="Firstname" required>
+        <input type="text" class="index_two" name="lastname"   id="lastname"   placeholder="Lastname" required>
+        <input type="text" class="index_two" name="phonenumber" id="phonenumber"   placeholder="Phonenumber" required>
+        <input type="text" class="index_two"name="emailid" id="emailid"   placeholder="Emailid" required>
+        <input type="text" class="index_two"name="address" id="address"   placeholder="Address" required>
+        <button id="index_button"name="submit">Update</button>
+        <ul><li id="view"><a  href="/index">Back</a></li></ul>
+      </div>
+     
+  
+    </form>
+  </div>
+ 
+  
+</div>
+     
+    
+</body>
+</html>

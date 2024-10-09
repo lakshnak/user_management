@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/stylesheets/style.css"  rel="stylesheet">
+    <script href="/javascripts/script.js"></script>
+</head>
+<body id="viewuser">
+    <div id="back">
+<table id="table1">
+    <div class="index_one">
+    <thead>
+        <tr>
+            <td>Firstname</td>
+            <td>Lastname</td>
+            <td>Phonenumber</td>
+            <td>Emailid</td>
+            <td>Address</td>
+        </tr>
+    </thead>
+ 
+        <tbody>
+            <% obj.data.forEach(function(result){ %>
+                <tr>
+                    <td><%= result.firstname %></td>
+                    <td><%= result.lastname %></td>
+                    <td><%= result.phonenumber %></td>
+                    <td><%= result.emailid %></td>
+                    <td><%= result.address %></td>
+                   
+                   <td> <ul><li id="view"><a href="/update/<%= result.userid %>">Edit</a></li></ul></td>
+                   <td><form action="delete/<%= result.userid %>" method="POST" >
+                    <button id="index_button"type="submit">Delete</button>
+                    <ul><li id="view"><a  href="/index">Back</a></li></ul>
+                </form></td>
+
+                </tr>
+            <% }); %>
+        </tbody>
+        
+       
+   
+</table>
+
+
+</div>
+</body>
+</html>
