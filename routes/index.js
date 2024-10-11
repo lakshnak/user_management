@@ -37,11 +37,17 @@ router.post("/adduser",function(req,res){
     insertquery=`insert into user_details (firstname,lastname,phonenumber,emailid,address) values(?,?,?,?,?)`;
     connection.query(insertquery,[firstname,lastname,phonenumber,emailid,address],function(err,results){
         if(err){
-            throw err;
+            
+            req.flash('error_msg', 'Error adding user!');
+            
+            return res.redirect('/'); // Redirect on error
+          
         }
         else{
             console.log("userdetails are inserted");
-            res.render("admin/index");
+            console.log(req.flash('success_msg'));
+            req.flash('success_msg', 'Form submitted successfully!');
+            return res.redirect('/'); // Redirect after success
         }
     })
 
@@ -59,6 +65,7 @@ router.get("/viewuser", function(req, res) {
             const obj = { data: result };
             
             res.render("admin/viewuser", { obj: obj }); // Make sure this matches the template usage
+          
             console.log("User details are displayed successfully");
         }
     });
@@ -87,12 +94,14 @@ router.post("/edit/:userid",function(req,res){
     updatequery="update user_details set firstname = ?, lastname = ?, phonenumber = ?, emailid = ?, address = ? WHERE userid = ?";
     connection.query(updatequery,[firstname, lastname, phonenumber, emailid, address, userid],function(err,result){
         if(err){
+            req.flash('error_msg', 'Error adding user!');
+            return res.redirect('/'); // Redirect on error
             throw err;
         }
         else{
-           
-           
-            res.render("admin/index");
+            console.log(req.flash('success_msg'));
+            req.flash('success_msg', 'Form updated successfully!');
+            return res.redirect('/'); // Redirect after success
             console.log("updated successfully"); 
         }
     })
@@ -105,13 +114,18 @@ router.post("/delete/:userid",function(req,res){
     deletequery="delete from user_details WHERE userid = ?";
     connection.query(deletequery,[userid],function(err,result){
         if(err){
-            throw err;
+            req.flash('error_msg', 'Error adding user!');
+            return res.redirect('/'); // Redirect on error
+            
         }
         else{
            
-           
-            res.render("admin/index");
+        
+            
             console.log("deleted successfully"); 
+            console.log(req.flash('success_msg'));
+            req.flash('success_msg', 'Form deleted successfully!');
+            return res.redirect('/'); // Redirect after success
         }
     })
 })

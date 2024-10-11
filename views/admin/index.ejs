@@ -10,6 +10,17 @@
 </head>
 <body><div id="back">
   <div id="index">
+
+    <% if (success_msg.length > 0) { %>
+      <div style="color: green;">
+          <%= success_msg %>
+      </div>
+  <% } %>
+  <% if (error_msg.length > 0) { %>
+    <div style="color: red;">
+        <%= error_msg %>
+    </div>
+<% } %>
     <form  action="/adduser" method="post" >
       <div class="index_one">
         <h4>User Management</h4>
